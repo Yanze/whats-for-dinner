@@ -1,0 +1,85 @@
+<div class="row col-md-12">
+  <div class="col-md-4 col-md-offset-1">
+    <p>Already have an account?</p>
+    <h2><i class="fa fa-arrow-circle-o-right"></i> Login Here</h2>
+    <p class="alert alert-danger" ng-show="loginWarning">{{loginWarning}}</p>
+
+    <form name="loginForm">
+      <div class="form-group" novalidate>
+        <label>Email</label>
+        <input name="loginEmail" type="email" placeholder="email" class="form-control" ng-model="user.email" required="">
+      </div>
+      <div style="color:red" role="alert" ng-if="loginSubmitted">
+        <div class="error" ng-show="loginForm.loginEmail.$error.required">Email cannot be blank.</div>
+        <div class="error" ng-show="loginForm.loginEmail.$error.email">Not valid email!</div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input name="loginPwd" type="text" placeholder="Password" class="form-control" ng-model="user.pwd" required="">
+      </div>
+      <div ng-messages="loginForm.loginPwd.$error" style="color:red" role="alert" ng-if="loginSubmitted">
+        <div ng-message="required">Password cannot be blank.</div>
+        <div ng-message="minlength">pwd must be longger than 6 letters or numbers.</div>
+      </div>
+
+      <button class="btn btn-default pull-right" ng-click="login()" type="button">Log In</button>
+    </form>
+  </div>
+
+  <!-- register a new account -->
+  <div class="col-md-4 col-md-offset-1">
+    <p>Don't have an account?</p>
+    <h2><i class="fa fa-plus-square"></i> Register Now</h2>
+    <p class="alert alert-success" ng-show="success">{{success}}</p>
+    <p class="alert alert-danger" ng-show="warning">{{warning}}</p>
+
+    <form name="registerForm" novalidate="">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email"
+               placeholder="email"
+               class="form-control"
+               ng-model="newUser.email"
+               required=""
+               name="email">
+      </div>
+      <div style="color:red" role="alert" ng-if="submitted">
+        <div class="error" ng-show="registerForm.email.$error.required">Email cannot be blank.</div>
+        <div class="error" ng-show="registerForm.email.$error.email">Not valid email!</div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="text"
+               placeholder="Password"
+               class="form-control"
+               ng-model="newUser.pwd"
+               required=""
+               name="pwd"
+               ng-minlength="6">
+      </div>
+      <div ng-messages="registerForm.pwd.$error" style="color:red" role="alert" ng-if="submitted">
+        <div ng-message="required">Password cannot be blank.</div>
+        <div ng-message="minlength">pwd must be longger than 6 letters or numbers.</div>
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="text"
+               placeholder="Confirm Password"
+               class="form-control"
+               ng-model="newUser.confirm_pwd"
+               required=""
+               name="confirm_pwd">
+      </div>
+      <div ng-messages="registerForm.confirm_pwd.$error" style="color:red" role="alert" ng-if="submitted">
+        <div ng-message="required">Password not matched.</div>
+      </div>
+
+      <button class="btn btn-default pull-right" ng-click="register()" type="button">Register</button>
+
+    </form>
+  </div>
+
+</div>

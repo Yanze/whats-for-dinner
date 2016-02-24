@@ -1,0 +1,27 @@
+{
+  "name": "requirements",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Yanze",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "0.7.x",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.3.4",
+    "mysql": "^2.10.2",
+    "node-gyp": "^3.2.1",
+    "node-mysql": "^0.4.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
+    "satellizer": "^0.13.4",
+    "validator": "^4.7.1"
+  }
+}
