@@ -5,6 +5,7 @@ module.exports = (function(){
      this.category = category;
      this.quantity = quantity;
      this.calories = calories;
+     
    }
 
    return {
