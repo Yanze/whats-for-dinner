@@ -50,15 +50,16 @@ body{
 
 .btn {
   background: transparent;
-  color: white;
+  color: black;
   width: 110px;
-  border-color: white;
+  border-color: black;
 }
 .btn:hover{
   background: transparent;
-  color: white;
+  color: black;
   width: 120px;
-  border-color: white;
+  border-color: black;
+  font-weight: bold;
 }
 
 .center{
@@ -74,4 +75,7 @@ body{
 
 .thumbnail img{
   height: 200px;
+}
+.caption,h3,p {
+  text-align: center;
 }
