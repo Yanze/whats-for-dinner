@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+
 var passport = require('passport');
-var User = require('../models/user');
+var user = require('../models/User');
 
 
 module.exports = (function(){
@@ -25,13 +25,18 @@ module.exports = (function(){
             });
           });
       });
-    },
+
+      // var newUser = new user.User(req.body.username, req.body.age);
+      //  newUser.register(function(err){
+      //
+      //  });
+      },
+
 
     login: function(req, res) {
 
       req.body.username = req.body.email;
       req.body.password = req.body.pwd;
-
 
       passport.authenticate('local')(req, res, function() {
         res.json({

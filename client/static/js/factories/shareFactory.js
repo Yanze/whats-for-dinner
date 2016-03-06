@@ -1,6 +1,6 @@
 var app = angular.module("app");
 
-app.factory("AccountFactory", function($http){
+app.factory("ShareFactory", function($http){
   var factory = {};
 
   factory.addFavoIngredient = function(ingredient, callback){

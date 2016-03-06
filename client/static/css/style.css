@@ -1,0 +1,77 @@
+body{
+  font-family: 'Abel', sans-serif;
+}
+
+
+.homepage-bg {
+  background: url('../imgs/pasta.jpg') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 500px; /*same height as jumbotron*/
+  top:0;
+  left:0;
+  z-index: -1;
+}
+.share-bg{
+  background: url('../imgs/recipe.jpg') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.jumbotron{
+  height: 350px;
+  color: white;
+  text-shadow: #444 0 1px 1px;
+  background:transparent;
+}
+
+#register a{
+  font-size: 14px;
+}
+
+.navbar {
+  background: transparent;
+  color: white;
+}
+
+.navbar-default {
+  border: transparent;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.btn {
+  background: transparent;
+  color: white;
+  width: 110px;
+  border-color: white;
+}
+.btn:hover{
+  background: transparent;
+  color: white;
+  width: 120px;
+  border-color: white;
+}
+
+.center{
+  text-align: center;
+  font-weight: bold;
+  color: rgb(112, 186, 7);
+  font-family: 'Lobster Two', cursive;
+}
+
+#todays-menu{
+  margin-top: 20px;
+}
+
+.thumbnail img{
+  height: 200px;
+}

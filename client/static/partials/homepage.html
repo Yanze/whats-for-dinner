@@ -1,24 +1,118 @@
-<div class="row col-md-12">
-  <div class="col-xs-9">
-    <h3>Welcome {{}}!</h3>
+<div>
+  <nav class="navbar navbar-default">
+    <!-- <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div> -->
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">home</a></li>
+          <li><a href="#/share">about</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right register" id="register">
+          <li><a href="#/login">Register</a></li>
+          <li><a href="#/login">Login</a></li>
+        </ul>
+      </div>
+
+    <!-- </div> -->
+
+  </nav>
+
+  <div class="homepage-bg"></div>
+  <!-- <div class="jumbotron">
+    <h1>No idea what's for dinner?</h1>
+    <p><a class="btn btn-default">Lean more &#62;&#62;</a></p>
+  </div> -->
+</div> <!-- homepage-bg -->
+
+
+<!-- menus -->
+<section id="todays-menu">
+
+  <div class="row">
+  <div ng-repeat="recipe in recipes" class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a class="close" href="#" ng-click="delete()">×</a>
+      <img src="http://static.food2fork.com/pineappled39c.jpg" alt="...">
+      <div class="caption">
+        <h3>{{recipe.name}}</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-3">
-    <a href="#/account">Account</a>
-    <a href="/logout" ng-click="logout()">Logout</a>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a class="close" href="#">×</a>
+      <img src="http://static.food2fork.com/Bacon2BGuacamole2BGrilled2BCheese2BSandwich2B5002B1953536bd522.jpg" alt="...">
+      <div class="caption">
+        <h3>Bacon Guacamole Grilled Cheese Sandwich</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
   </div>
 
-  <div class="col-md-12">
-    <nav>
-      <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
-      </ul>
-    </nav>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a class="close" href="#">×</a>
+      <img src="http://static.food2fork.com/meatballsbb2a.jpg" alt="...">
+      <div class="caption">
+        <h3>Salisbury Steak Meatballs</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
   </div>
-
-
-
-
-
 </div>
+
+<div class="row">
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <a class="close" href="#">×</a>
+    <img src="http://static.food2fork.com/586964c174.jpg" alt="...">
+    <div class="caption">
+      <h3>Slow Cooker Pulled Pork</h3>
+      <p>...</p>
+      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <a class="close" href="#">×</a>
+    <img src="http://static.food2fork.com/artichoke821e.jpg" alt="...">
+    <div class="caption">
+      <h3>Spinach Artichoke Pasta</h3>
+      <p>...</p>
+      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <a class="close" href="#">×</a>
+    <img src="http://static.food2fork.com/CapreseAvocadoToast1d768.jpg" alt="...">
+    <div class="caption">
+      <h3>Caprese Avocado Toast</h3>
+      <p>...</p>
+      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+    </div>
+  </div>
+</div>
+</div>
+</section>

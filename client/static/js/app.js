@@ -10,9 +10,9 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: 'static/partials/homepage.html',
     controller: "homepageController"
   })
-  .when('/account', {
-    templateUrl: 'static/partials/account.html',
-    controller: "accountController"
+  .when('/share', {
+    templateUrl: 'static/partials/share.html',
+    controller: "shareController"
   });
   // .when('/new-question', {
   //   templateUrl: 'static/partials/addQuestion.html',

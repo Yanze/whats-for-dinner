@@ -1,12 +1,12 @@
-var users = require('./../controllers/users.js');
-var ingredients = require('./../controllers/ingredients.js');
+var User = require('../controllers/users.js');
 
 
-module.exports = function(app) {
 
-  app.post('/register', users.register);
-  app.post('/login', users.login);
-  app.post('/add-ingredient', ingredients.addFavo);
+module.exports = function(app, passport) {
 
+  // app.post('/register', User.register);
+  // app.post('/login', User.login);
+
+  
 
 };

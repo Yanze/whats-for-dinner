@@ -1,6 +1,6 @@
 var app = angular.module("app");
 
-app.controller("accountController", function($scope, $location, AccountFactory) {
+app.controller("shareController", function($scope, $location, ShareFactory) {
 
   $scope.addFavoIngredients = function(){
     console.log("clicked");

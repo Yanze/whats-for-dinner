@@ -1,41 +1,47 @@
-var express = require('express');
-var path = require('path');
+var express  = require('express');
+// var session  = require('express-session');
+// var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var session = require('express-session');
+// var morgan = require('morgan');
+var path = require('path');
+var app      = express();
+var port     = process.env.PORT || 8000;
+
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var app = express();
+// var flash    = require('connect-flash');
 
-app.use(passport.initialize());
-app.use(passport.session());
+require('./server/models/User')(passport);
 
+// set up our express application
+// app.use(morgan('dev')); // log every request to the console
+// app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+app.use(bodyParser.json());
 
-// app.use(express.cookieParser());
-// app.use(express.session({secret: 'jesuisasecretkey'}));
+// app.set('view engine', 'ejs');
 
-
-// passport config
-var Account = require('./server/models/user');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
-
-
-
-// set up a static file server that points to the 'client' directory;
-// we will put all angular files inside of client;
 app.use(express.static(path.join(__dirname, './client')));
 // app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
-// require and runs the code from our routes.js
-// pass it app so we can attach our routing rules to our express application;
-require('./server/config/mongoose.js');
-require('./server/config/routes.js')(app);
 
 
+// required for passport
+// app.use(session({
+// 	secret: 'vidyapathaisalwaysrunning',
+// 	resave: true,
+// 	saveUninitialized: true
+//  } )); // session secret
+
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+// app.use(flash()); // use connect-flash for flash messages stored in session
 
 
+// routes ======================================================================
+require('./server/config/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
-app.listen(8000, function(){
-
-});
+// launch ======================================================================
+app.listen(port);
+console.log('The magic happens on port ' + port);

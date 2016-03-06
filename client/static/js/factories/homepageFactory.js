@@ -9,5 +9,11 @@ app.factory("HomepageFactory", function($http){
   //   });
   // };
 
+  factory.getRecipe = function(callback){
+    $http.get('/get-recipes').success(function(response){
+        callback(response);
+    });
+  };
+
   return factory;
 });
