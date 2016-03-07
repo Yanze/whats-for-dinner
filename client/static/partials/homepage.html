@@ -1,6 +1,6 @@
 
   <nav class="navbar navbar-default">
-    <!-- <div class="container-fluid">
+    <div class="container-fluid">
 
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -10,13 +10,13 @@
           <span class="icon-bar"></span>
         </button>
 
-      </div> -->
+      </div>
 
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">home</a></li>
-          <li><a href="#/share">about</a></li>
+          <!-- <li><a href="#">home</a></li> -->
+          <li><a href="#/share">how it works</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right register" id="register">
@@ -25,12 +25,23 @@
         </ul>
       </div>
 
-    <!-- </div> -->
+    </div>
 
   </nav> <!-- end navbar -->
 
   <div class="homepage-bg"></div>
 
+  <!-- send recipe to user -->
+  <section class="row">
+    <form class="col-md-8 col-md-offset-2">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Enter your email address to receive recipes">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button"  id="send-recipe">Send me recipes</button>
+        </span>
+      </div><!-- /input-group -->
+    </form>
+  </section>
 
 
 
@@ -38,14 +49,14 @@
 <section id="todays-menu">
 
   <div class="row">
-  <div ng-repeat="recipe in recipes" class="col-sm-6 col-md-4">
-    <div class="thumbnail" remove-on-click >
+  <div ng-repeat="recipe in recipes" class="col-sm-6 col-md-4 recipe">
+    <div class="thumbnail">
       <img ng-src="{{recipe.imgLink}}" alt="...">
       <div class="caption">
         <h3>{{recipe.name}}</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Show Recipe</a></p>
-        <p><a ng-click="delete()">I don't like it</a></p>
+        <p>{{recipe.description}}</p>
+        <p><a href="#" class="btn btn-primary" role="button" id="show-recipe">Show Recipe</a></p>
+        <p><button ng-click="delete(recipe ,recipes)" id="sth-else">I want something else</button></p>
       </div>
     </div>
   </div>

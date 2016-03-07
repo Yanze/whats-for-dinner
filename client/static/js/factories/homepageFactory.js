@@ -15,5 +15,11 @@ app.factory("HomepageFactory", function($http){
     });
   };
 
+  factory.findANewRecipes = function(excludedRecipes, callback){
+    $http.post('/get-new-recipe', excludedRecipes).success(function(response){
+        callback(response);
+    });
+  };
+
   return factory;
 });

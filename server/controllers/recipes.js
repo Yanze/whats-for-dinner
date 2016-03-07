@@ -19,5 +19,16 @@ module.exports = (function(){
       });
 
       },
+
+      getNewRecipe: function(req, res){
+        var current_recipe = new recipe.Recipe();
+        current_recipe.getNewRecipe(req.body, function(){
+          console.log(current_recipe);
+          res.json(current_recipe);
+        });
+      },
+
+
+
  };
 })();

@@ -48,13 +48,13 @@ body{
   font-size: 20px;
 }
 
-.btn {
+#show-recipe {
   background: transparent;
   color: black;
   width: 110px;
   border-color: black;
 }
-.btn:hover{
+#show-recipe:hover{
   background: transparent;
   color: black;
   width: 120px;
@@ -72,10 +72,33 @@ body{
 #todays-menu{
   margin-top: 20px;
 }
+.thumbnail{
+  height: 400px;
+}
 
 .thumbnail img{
   height: 200px;
 }
 .caption,h3,p {
   text-align: center;
+}
+#sth-else{
+  background-color: transparent;
+  border-color: transparent;
+}
+#sth-else:hover{
+  font-weight: bold;
+}
+
+#send-recipe{
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+#send-recipe:hover{
+  background: transparent;
+  color: rgb(4, 173, 138);
+  border-color: rgb(4, 173, 138);
+  font-weight: bold;
 }
