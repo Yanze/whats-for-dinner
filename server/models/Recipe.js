@@ -173,15 +173,49 @@ module.exports = (function() {
             ids.splice(indexNum, 1);
           }
         }
-  
+
         var id = ids[Math.floor(Math.random()*ids.length)];
 
-
         current_recipe.loadById(id, function(){
-          callback();
+        callback();
         });
 
       });
+    });
+
+  };
+
+  Recipe.prototype.getCurrentRecipesByIds = function(ids, callback){
+    var recipes = [];
+    pg.connect(dbconfig.connectString, function(err, client) {
+      if (err) {
+        return console.error('error fetching client from pool', err);
+      }
+
+      var sql = 'SELECT * ' +
+        'FROM ' +
+        'recipe ' +
+        'WHERE id = ANY ($1::int[])';
+
+
+      client.query(sql, [ids], function(err, res) {
+
+        var recipes = [];
+        for(var i in ids){
+          var id = ids[i];
+
+          for(var j in res.rows){
+            if(id == res.rows[j].id){
+              recipes.push(res.rows[j]);
+              break;
+            }
+          }
+
+        }
+
+        callback(recipes);
+      });
+
     });
 
   };

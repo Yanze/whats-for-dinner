@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute" ,"ngMessages"]);
+var app = angular.module("app", ["ngRoute" ,"ngMessages", "ngCookies"]);
 
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
@@ -10,14 +10,14 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: 'static/partials/homepage.html',
     controller: "homepageController"
   })
-  .when('/share', {
-    templateUrl: 'static/partials/share.html',
-    controller: "shareController"
+  .when('/how-it-works', {
+    templateUrl: 'static/partials/howWorks.html',
+    controller: "howWorksController"
+  })
+  .when('/show-recipe/:id', {
+    templateUrl: 'static/partials/showRecipe.html',
+    controller: "showRecipeController"
   });
-  // .when('/new-question', {
-  //   templateUrl: 'static/partials/addQuestion.html',
-  //   controller: "addQuestionController"
-  // })
   // .when('/question/:id', {
   //   templateUrl: 'static/partials/question.html',
   //   controller: "questionController"

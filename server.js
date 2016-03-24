@@ -8,6 +8,7 @@ var app      = express();
 var port     = process.env.PORT || 8000;
 
 var passport = require('passport');
+
 // var flash    = require('connect-flash');
 
 require('./server/models/User')(passport);
@@ -41,6 +42,35 @@ app.use(passport.session()); // persistent login sessions
 
 // routes ======================================================================
 require('./server/config/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+
+
+// mailgun test
+// var mailgun = require('mailgun-js');
+//
+//
+// var api_key = 'key-1c31d4e89b7f61799421c4d0410e7b05';
+// var domain = 'sandbox1c180201ab1b4b36b81ea0037626dd77.mailgun.org';
+//
+//
+// var mailgun = require('mailgun-js')({apiKey: 'key-1c31d4e89b7f61799421c4d0410e7b05', domain: 'sandbox1c180201ab1b4b36b81ea0037626dd77.mailgun.org'});
+//
+// var data = {
+//   from: 'Excited User <me@samples.mailgun.org>',
+//   to: 'yanzeliu.france@gmail.com',
+//   subject: 'Whats for dinner - your recipes!',
+//   text: 'Thanks for using whats for dinner! Enjoy your dinners!'
+// };
+//
+// mailgun.messages().send(data, function (error, body) {
+//   console.log(body);
+// });
+
+
+
+
+
+
+
 
 // launch ======================================================================
 app.listen(port);

@@ -15,11 +15,19 @@ app.factory("HomepageFactory", function($http){
     });
   };
 
-  factory.findANewRecipes = function(excludedRecipes, callback){
+  factory.findANewRecipe = function(excludedRecipes, callback){
     $http.post('/get-new-recipe', excludedRecipes).success(function(response){
         callback(response);
     });
   };
 
+  factory.getCurrentRecipesByIds = function(ids, callback){
+    $http.post('/get-current-recipes', ids).success(function(response){
+      callback(response);
+    });
+  };
+
   return factory;
+
+
 });
